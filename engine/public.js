@@ -15,8 +15,16 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
-server.get('/echo/:name', function (req, res, next) {
-    res.send(req.params);
+server.get('/api/newsmth/top10', function (req, res, next) {
+    //res.send(req.params);
+    res.json({
+        success: 1,
+        data: {
+            list: [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+            ]
+        }
+    });
     return next();
 });
 

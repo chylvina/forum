@@ -1,0 +1,8 @@
+config/runtime.json
+
+*.ini
+
+.idea
+tmp
+test/screenshot
+node_modules

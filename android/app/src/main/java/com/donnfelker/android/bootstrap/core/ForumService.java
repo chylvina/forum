@@ -64,6 +64,12 @@ public class ForumService {
 
     }
 
+    private static class TopicInfoWrapper {
+
+        private List<TopicInfo> results;
+
+    }
+
     private static class JsonException extends IOException {
 
         private static final long serialVersionUID = 3774706606129390273L;
@@ -100,13 +106,9 @@ public class ForumService {
      * Create bootstrap service
      *
      * @param userAgentProvider
-     * @param apiKey
      */
-    public ForumService(final String apiKey, final UserAgentProvider userAgentProvider) {
+    public ForumService(final UserAgentProvider userAgentProvider) {
         this.userAgentProvider = userAgentProvider;
-        this.username = null;
-        this.password = null;
-        this.apiKey = apiKey;
     }
 
     /**
@@ -221,6 +223,19 @@ public class ForumService {
         try {
             HttpRequest request = execute(HttpRequest.get(URL_CHECKINS));
             CheckInWrapper response = fromJson(request, CheckInWrapper.class);
+            if (response != null && response.results != null)
+                return response.results;
+            return Collections.emptyList();
+        } catch (HttpRequestException e) {
+            throw e.getCause();
+        }
+    }
+
+    public List<TopicInfo> getTop10() throws IOException {
+        try {
+            HttpRequest request = execute(HttpRequest.get(URL_CHECKINS));
+            
+            TopicInfoWrapper response = fromJson(request, TopicInfoWrapper.class);
             if (response != null && response.results != null)
                 return response.results;
             return Collections.emptyList();

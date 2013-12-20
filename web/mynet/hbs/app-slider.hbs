@@ -1,0 +1,24 @@
+{{#app-slider}}
+  <div class="container app-slider">
+    <div class="app-slider-indicator">
+      <ul class="indicator">
+			  {{#each children}}
+          <li {{#ifCond @index '==' 0}}class="active"{{/ifCond}}></li>
+			  {{/each}}
+      </ul>
+    </div>
+    <div class="container viewport app-slider-viewport">
+      <div class="wrapper app-slider-wrapper">
+				{{#children}}
+          <div class="app-slider-item">
+            <img src="{{thumb}}">
+
+            <div class="app-slider-item-div" data-url="{{url}}">
+              <span class="app-slider-item-label">{{text}}</span>
+            </div>
+          </div>
+				{{/children}}
+      </div>
+    </div>
+  </div>
+{{/app-slider}}

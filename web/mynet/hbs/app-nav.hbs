@@ -1,0 +1,12 @@
+{{#app-nav}}
+  <div class="container app-nav">
+    <ul class="app-nav-ul">
+			{{#each children}}
+        <!-- nav level 1 -->
+        <li data-url="{{url}}" data-index="{{@index}}" {{#if active}}class="app-nav-active"{{/if}}>
+					{{text}}
+        </li>
+			{{/each}}
+    </ul>
+  </div>
+{{/app-nav}}

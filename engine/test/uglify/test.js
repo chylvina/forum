@@ -1,6 +1,6 @@
 /**
  *
- * Author: xiongliang.xl@alibaba-inc.com
+ * Author: chylvina@gmail.com
  * Since: 13-6-13 下午4:26
  * Description:
  */

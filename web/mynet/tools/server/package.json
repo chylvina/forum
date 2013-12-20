@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "description": "",
+  "version": "1.0.0",
+  "author": {
+    "name": "Xiong Liang",
+    "email": "xiongliang.xl@alibaba-inc.com"
+  },
+  "contributors": [
+
+  ],
+  "dependencies": {
+    "express": "latest",
+    "lactate": "latest"
+  }
+}

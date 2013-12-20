@@ -1,0 +1,18 @@
+{{#app-productlist}}
+  <div class="container app-productlist">
+	  {{#if title}}
+	  <div class="app-productlist-title">{{title}}</div>
+		{{/if}}
+
+	{{#children}}
+
+    <li class="app-productlist-li" data-url="{{url}}">
+      <div class="app-productlist-imgbox">
+        <img src="{{thumb}}">
+      </div>
+      <span>{{title}}</span>
+    </li>
+
+	{{/children}}
+  </div>
+{{/app-productlist}}

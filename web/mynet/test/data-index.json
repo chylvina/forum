@@ -1,0 +1,176 @@
+{
+  "url": "/",
+  "title": "成都明友化工有限公司",
+  "description": "成都干燥剂，四川干燥剂，小包干燥剂号",
+  "logo": {
+    "src": ""
+  },
+  "version": "1.1",
+  "config": {
+    "packageId": "package id",
+    "themeId": "black",
+    "layoutId": "layout-1"
+  },
+  "t": "data",
+  "content": [
+    {
+      "t": "header",
+      "text": "成都明友化工有限公司"
+    },
+    {
+      "t": "nav",
+      "children": [
+        {
+          "url": "/index",
+          "text": "首页",
+          "active": 1,
+          "t": "item"
+        },
+        {
+          "url": "/products",
+          "text": "商品",
+          "t": "item"
+        },
+        {
+          "url": "/news",
+          "text": "文章",
+          "t": "item"
+        },
+        {
+          "url": "/about",
+          "text": "关于",
+          "t": "item"
+        }
+      ]
+    },
+    {
+      "t": "slider",
+      "children": [
+        {
+          "text": "描述描述描述描述描述描述",
+          "thumb": "img/slider1.jpg",
+          "t": "item"
+        },
+        {
+          "text": "描述描述描述描述描述描述",
+          "thumb": "img/slider2.jpg",
+          "t": "item"
+        },
+        {
+          "text": "描述描述描述描述描述描述",
+          "thumb": "img/slider3.jpg",
+          "t": "item"
+        }
+      ]
+    },
+    {
+      "t": "productlist",
+      "title": "推荐商品",
+      "children": [
+        {
+          "url": "/admin/design.aspx?docuid=1479",
+          "title": "产品一",
+          "text": "产品简介产品简介产品简介产品简介",
+          "thumb": "img/pic1.jpg",
+          "t": "item"
+        },
+        {
+          "url": "/admin/design.aspx?docuid=1479",
+          "title": "产品二",
+          "text": "产品简介产品简介产品简介产品简介",
+          "thumb": "img/pic1.jpg",
+          "t": "item"
+        },
+        {
+          "url": "/admin/design.aspx?docuid=1479",
+          "title": "产品三",
+          "text": "产品简介产品简介产品简介产品简介",
+          "thumb": "img/pic1.jpg",
+          "t": "item"
+        },
+        {
+          "url": "/admin/design.aspx?docuid=1479",
+          "title": "产品四",
+          "text": "产品简介产品简介产品简介产品简介",
+          "thumb": "img/pic1.jpg",
+          "t": "item"
+        },
+        {
+          "url": "/admin/design.aspx?docuid=1479",
+          "title": "产品五",
+          "text": "产品简介产品简介产品简介产品简介",
+          "thumb": "img/pic1.jpg",
+          "t": "item"
+        },
+        {
+          "url": "/admin/design.aspx?docuid=1479",
+          "title": "产品六",
+          "text": "产品简介产品简介产品简介产品简介",
+          "thumb": "img/pic1.jpg",
+          "t": "item"
+        }
+      ]
+    },
+    {
+      "t": "newslist",
+      "title": "最新资讯",
+      "children": [
+        {
+          "url": "/admin/design.aspx?docuid=1479",
+          "title": "MWC缺乏看点:廉价手",
+          "text": "FirefoxOS的发布让廉价手机成为本届亮点。",
+          "date": "2013-1-30",
+          "thumb": "img/pic1.jpg",
+          "t": "item"
+        },
+        {
+          "title": "三星计划今年平板电脑三星计划今年平板电脑三星计划今年平板电脑",
+          "url": "_d270491683.htm",
+          "text": "虽然这一目标看似激进，但不能帮助三星超越苹果。",
+          "date": "2013-1-30",
+          "t": "item"
+        },
+        {
+          "title": "016移动设备出货量或达26亿台",
+          "url": "_d270491685.htm",
+          "text": "平板电脑将是出货量增长速度最快的移动设备。",
+          "date": "2013-1-30",
+          "thumb": "img/pic3.jpg",
+          "t": "item"
+        },
+        {
+          "url": "/admin/design.aspx?docuid=1479",
+          "title": "MWC缺乏看点:廉价手",
+          "text": "FirefoxOS的发布让廉价手机成为本届亮点。",
+          "date": "2013-1-30",
+          "thumb": "img/pic1.jpg",
+          "t": "item"
+        },
+        {
+          "title": "三星计划今年平板电脑",
+          "url": "_d270491683.htm",
+          "text": "虽然这一目标看似激进，但不能帮助三星超越苹果。",
+          "date": "2013-1-30",
+          "thumb": "img/pic2.jpg",
+          "t": "item"
+        },
+        {
+          "title": "016移动设备出货量或达26亿台",
+          "url": "_d270491685.htm",
+          "text": "平板电脑将是出货量增长速度最快的移动设备。",
+          "date": "2013-1-30",
+          "thumb": "img/pic3.jpg",
+          "t": "item"
+        },
+        {
+          "t": "more",
+          "title": "更多",
+          "url": "more/news/url"
+        }
+      ]
+    },
+    {
+      "t": "footer"
+    }
+  ]
+}

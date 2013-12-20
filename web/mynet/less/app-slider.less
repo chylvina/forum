@@ -1,0 +1,122 @@
+.app-slider {
+  top: 0;
+  height: 150px;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.app-slider-item {
+  position: relative;
+  float: left;
+  height: 150px;
+  font-size: 0;
+  line-height: 150px;
+}
+
+.app-slider-item img {
+  max-height: 150px;
+  _height: 150px;
+}
+
+.app-slider-item-div {
+  height: 36px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url('img/sliderbg.png') 0 0 repeat-x;
+  background-size: auto 36px;
+  color: #FFF;
+  font-size: 18px;
+  text-align: left;
+  line-height: 40px;
+}
+
+.app-slider-item-label {
+  padding-left: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 60%;
+  display: block;
+}
+
+.app-slider-indicator {
+  width: 40%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  z-index: 2;
+}
+
+.app-slider-indicator li {
+  display: block;
+  float: left;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-indent: -9999em;
+  width: 12px;
+  height: 12px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  background: #fff;
+  overflow: hidden;
+  margin-right: 6px;
+}
+
+.app-slider-indicator ul {
+  display: block;
+  float: right;
+  padding: 0;
+  margin: 0 15px 0 0;
+}
+
+.app-slider-indicator li.active {
+  background: #fff;
+}
+
+.app-slider-indicator li:last-child {
+  margin: 0;
+}
+
+.app-slider-wrapper {
+  position: absolute;
+  z-index: 1;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+  background-color: #444;
+}
+
+.theme-black .app-slider-indicator li.active {
+  background: #111;
+}
+
+.theme-red .app-slider-indicator li.active {
+  background: #990000;
+}
+
+.theme-green .app-slider-indicator li.active {
+  background: #006600;
+}
+
+.theme-blue .app-slider-indicator li.active {
+  background: #006699;
+}

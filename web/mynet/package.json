@@ -1,0 +1,64 @@
+{
+  "name": "App风格模板",
+  "description": "App风格模板",
+  "version": "1.0",
+  "dataversion": "mynet-1.0",
+  "host": "http://alpha.res.mynet.cn/packages/app-v1/",
+  "screenshot": "screenshot/sc.jpg",
+  "author": {
+    "name": "Xiong Liang",
+    "email": "xiongliang.xl@alibaba-inc.com"
+  },
+  "contributors": [
+  ],
+  "dependencies": {
+    "jquery": "1.9.1",
+    "hbs": "1.0.0",
+    "modernizr": "2.6.2",
+    "iscroll": "4.2.5",
+    "h5bp": "4.1.0"
+  },
+  "keywords": [
+    "color",
+    "layout",
+    "category"
+  ],
+  "bin": {
+    "js": "js/main.js",
+    "css": "css/main.css"
+  },
+  "bugs": {
+    "url": "http://gitlab.alibaba-inc.com/xiongliang.xl/mynetmobile/issues"
+  },
+  "_id": "app-v1",
+  "_from": "template-app-0.9.2",
+  "theme": [
+    {
+      "name": "时尚黑",
+      "id": "black",
+      "screenshot": "screenshot/sc-color4.jpg"
+    },
+    {
+      "name": "热情红",
+      "id": "red",
+      "screenshot": "screenshot/sc-color1.jpg"
+    },
+    {
+      "name": "深邃蓝",
+      "id": "blue",
+      "screenshot": "screenshot/sc-color3.jpg"
+    },
+    {
+      "name": "清新绿",
+      "id": "green",
+      "screenshot": "screenshot/sc-color2.jpg"
+    }
+  ],
+  "layout":[
+    {
+      "name": "默认",
+      "id": "layout-1",
+      "screenshot": "screenshot/layout-1.gif"
+    }
+  ]
+}

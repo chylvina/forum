@@ -1,0 +1,36 @@
+{{#app-productlist2}}
+	{{#if isall}}
+    <div class="container app-newslist">
+		{{#if title}}
+        <div class="app-newslist-mtitle">{{title}}</div>
+		{{/if}}
+    <ul >
+	{{/if}}
+	{{#children}}
+
+		{{#if thumb}}
+        <li class="app-newslist-li" data-url="{{url}}">
+          <div class="app-newslist-imgbox">
+            <img src="{{thumb}}">
+          </div>
+          <span class="app-newslist-title">{{title}}</span>
+          <p class="app-newslist-info">{{text}}</p>
+          <span class="app-newslist-date">{{date}}</span>
+        </li>
+		{{else}}
+        <li class="app-newslist-li nothumb" data-url="{{url}}">
+          <span class="app-newslist-title">{{title}}</span>
+          <span class="app-newslist-date">{{date}}</span>
+        </li>
+		{{/if}}
+
+	{{/children}}
+	{{#if isall}}
+    </ul>
+      <div class="app-newslist-pullUp">
+        <span class="app-newslist-pullUpIcon"></span>
+        <span class="app-newslist-pullUpLabel">上拉获取更多...</span>
+      </div>
+    </div>
+	{{/if}}
+{{/app-productlist2}}

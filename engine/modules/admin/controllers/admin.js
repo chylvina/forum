@@ -1,6 +1,6 @@
 /**
  * Admin Controller
- * Author: xiongliang.xl@alibaba-inc.com
+ * Author: chylvina@gmail.com
  * Since: 13-5-29 下午4:57
  * Description:
  */

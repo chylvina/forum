@@ -1,0 +1,36 @@
+/**
+ *
+ * Author: chylvina@gmail.com
+ * Since: 13-6-13 下午3:09
+ * Description:
+ */
+
+var spawn = require('child_process').spawn,
+    config = require('config');
+
+
+exports.run = function(urlStr, cmd, callback) {
+  var phantom = spawn('phantomjs',
+      [__dirname + '/run.js',
+        urlStr,
+        cmd]);
+  phantom.stderr.on('data', function (data) {
+    console.log('phantomjs error: ' + data);
+    callback(data);
+  });
+  phantom.stdout.on('data', function (data) {
+    data = String(data);
+    if(data.indexOf('result:') == 0) {
+      //console.log('result:', JSON.parse(data.substr(7)));
+
+      //
+      callback(null, data.substr(7));
+    }
+    else {
+      console.log('phantomjs output: ' + data);
+    }
+  });
+  phantom.on('exit', function (code) {
+    console.log('phantomjs exit');
+  });
+};

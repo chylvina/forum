@@ -15,16 +15,53 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
-server.get('/api/newsmth/top10', function (req, res, next) {
-    //res.send(req.params);
-    res.json({
-        success: 1,
-        data: {
-            list: [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-            ]
+var newsmthParse = require('./modules/newsmth-parse');
+
+server.get('/api/newsmth/index', function (req, res, next) {
+    //var urlStr = req.query.url;
+    urlStr = 'http://www.newsmth.net/nForum/#!mainpage';//'http://www.newsmth.net/nForum/#!article/DragonBall/13151';
+    if(!urlStr) {
+        return res.send(400, 'url is required.');
+    }
+    console.log('urlStr:', urlStr);
+
+    newsmthParse.run(urlStr, 'parse-index.js', function(err, result) {
+        if(err) {
+            res.send(500, err);
         }
+
+        //var filename = utils.md5(urlStr);
+        // 去掉 console.log 出来的 \n
+        //fs.writeFileSync("./tmp/" + filename, "var contentData = '" + utils.escape(result.trim()) + "';");
+
+        //
+        /*var minified = UglifyJS.minify([
+            "./hbs/title.js",
+            "./hbs/text.js",
+            "./hbs/navbar.js",
+            "./hbs/link.js",
+            "./hbs/imagelist.js",
+            "./hbs/image.js",
+            "./hbs/header.js",
+            "./hbs/footer-title.js",
+            "./hbs/footer-text.js",
+            "./hbs/footer-link.js",
+            "./hbs/footer-image.js",
+            "./tmp/" + filename,
+            "./hbs/render.js"
+        ]);*/
+
+        //fs.writeFileSync("./views/" + filename + ".js", minified.code);
+
+        console.log(result);
+
+        return res.json(result);
+
+        /*return res.render('frame', {
+            src: filename + ".js"
+        });*/
     });
+
     return next();
 });
 

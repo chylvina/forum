@@ -40,6 +40,7 @@
     "lactate": "latest"
   },
   "dependencies": {
-    "restify": "~2.6.1"
+    "restify": "~2.6.1",
+    "redis": "~0.9.2"
   }
 }

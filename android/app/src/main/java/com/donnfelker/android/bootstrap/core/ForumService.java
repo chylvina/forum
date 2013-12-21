@@ -234,7 +234,7 @@ public class ForumService {
     public List<TopicInfo> getTop10() throws IOException {
         try {
             HttpRequest request = execute(HttpRequest.get(URL_CHECKINS));
-            
+
             TopicInfoWrapper response = fromJson(request, TopicInfoWrapper.class);
             if (response != null && response.results != null)
                 return response.results;

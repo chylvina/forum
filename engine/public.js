@@ -18,6 +18,19 @@ server.use(restify.bodyParser());
 var newsmthParse = require('./modules/newsmth-parse');
 
 server.get('/api/newsmth/index', function (req, res, next) {
+    return res.json({
+        success: 1,
+        data: {
+            top10: [
+                {
+
+                }
+            ]
+        }
+    });
+});
+
+server.get('/api/newsmth/index', function (req, res, next) {
     //var urlStr = req.query.url;
     urlStr = 'http://www.newsmth.net/nForum/#!mainpage';//'http://www.newsmth.net/nForum/#!article/DragonBall/13151';
     if(!urlStr) {

@@ -8,6 +8,10 @@ var newsmth_parse = function() {
     return JSON.stringify(result);
 };
 
+var url2Mobile = function(s) {
+    return s.replace("http://www.newsmth.net/nForum/article/", "http://m.newsmth.net/article/");
+}
+
 var getTop10 = function() {
     var result = [];
     $('#top10 li').each(function (index, elem) {
@@ -15,12 +19,12 @@ var getTop10 = function() {
         $(elem).find('a').each(function (index, elem) {
             var elem = $(elem);
             if(index == 0) {
-                topic.href = elem.prop('href');
-                topic.title = elem.prop('title');
-            }
-            else if(index == 1) {
                 topic.categoryHref = elem.prop('href');
                 topic.category = elem.prop('title');
+            }
+            else if(index == 1) {
+                topic.href = url2Mobile(elem.prop('href'));
+                topic.title = elem.prop('title');
             }
 
         });
@@ -35,11 +39,12 @@ var getSlider = function() {
     $('#slider .pic a').each(function(index, elem) {
         var elem = $(elem);
         var topic = {};
-        topic.href = elem.prop('href');
+        topic.href = url2Mobile(elem.prop('href'));
         topic.title = elem.prop('title');
         topic.image = elem.find('img').prop('src');
         result.push(topic);
     });
+
     return result;
 };
 
@@ -51,15 +56,16 @@ var getHotSpot = function() {
         $(elem).find('a').each(function (index, elem) {
             var elem = $(elem);
             if(index == 0) {
-                topic.href = elem.prop('href');
-                topic.title = elem.prop('title');
-            }
-            else if(index == 1) {
                 topic.categoryHref = elem.prop('href');
                 topic.category = elem.prop('title');
             }
-
+            else if(index == 1) {
+                topic.href = url2Mobile(elem.prop('href'));
+                topic.title = elem.prop('title');
+            }
         });
         result.push(topic);
     });
+
+    return result;
 };

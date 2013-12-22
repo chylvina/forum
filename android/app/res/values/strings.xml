@@ -20,7 +20,7 @@
     <string name="error_loading">加载数据失败</string>
     <string name="no_users">No Users</string>
     <string name="no_news">No News</string>
-    <string name="no_top10">暂无数据</string>
+    <string name="no_topic">暂无数据</string>
     <string name="avatar">Avatar</string>
     <string name="choose">Choose</string>
 

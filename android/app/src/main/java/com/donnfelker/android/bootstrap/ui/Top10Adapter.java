@@ -37,7 +37,7 @@ public class Top10Adapter extends AlternatingColorListAdapter<TopicInfo> {
     protected void update(int position, TopicInfo item) {
         super.update(position, item);
 
-        setText(0, item.getCategory());
+        //setText(0, item.getCategory());
         setText(1, item.getTitle());
         //setNumber(R.id.tv_date, item.getCreatedAt());
     }

@@ -45,7 +45,7 @@ public class TopicActivity extends BootstrapActivity {
         mWebView.setWebViewClient(new CustomWebViewClient());
 
         // Finally make the WebView load something...
-        mWebView.loadUrl("http://m.newsmth.net/article/Movie/2303055");
+        mWebView.loadUrl(topicInfo.getHref());
 
     }
 

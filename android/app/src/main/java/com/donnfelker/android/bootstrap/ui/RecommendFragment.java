@@ -24,7 +24,7 @@ import javax.inject.Inject;
 import java.util.Collections;
 import java.util.List;
 
-public class Top10Fragment extends ItemListFragment<TopicInfo> {
+public class RecommendFragment extends ItemListFragment<TopicInfo> {
 
     @Inject protected BootstrapServiceProvider serviceProvider;
     @Inject protected LogoutService logoutService;
@@ -78,7 +78,7 @@ public class Top10Fragment extends ItemListFragment<TopicInfo> {
             public List<TopicInfo> loadData() throws Exception {
                 try {
                     if(getActivity() != null) {
-                        return serviceProvider.getService(getActivity()).getTop10();
+                        return serviceProvider.getService(getActivity()).getRecommend();
                     } else {
                         return Collections.emptyList();
                     }

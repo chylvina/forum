@@ -52,7 +52,7 @@ public class BootstrapService {
         private List<News> results;
     }
 
-    private static class Topic10Wrapper {
+    private static class TopicListWrapper {
 
         private Boolean success;
 
@@ -217,7 +217,19 @@ public class BootstrapService {
     public List<TopicInfo> getTop10() throws IOException {
         try {
             HttpRequest request = execute(HttpRequest.get(URL_TOP10));
-            Topic10Wrapper response = fromJson(request, Topic10Wrapper.class);
+            TopicListWrapper response = fromJson(request, TopicListWrapper.class);
+            if (response != null && response.success == true && response.data != null)
+                return response.data;
+            return Collections.emptyList();
+        } catch (HttpRequestException e) {
+            throw e.getCause();
+        }
+    }
+
+    public List<TopicInfo> getRecommend() throws IOException {
+        try {
+            HttpRequest request = execute(HttpRequest.get(URL_RECOMMEND));
+            TopicListWrapper response = fromJson(request, TopicListWrapper.class);
             if (response != null && response.success == true && response.data != null)
                 return response.data;
             return Collections.emptyList();

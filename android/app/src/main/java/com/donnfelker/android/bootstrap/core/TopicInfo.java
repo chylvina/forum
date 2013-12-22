@@ -11,13 +11,15 @@ public class TopicInfo implements Serializable {
     private String title;
     private String href;
     private String num;
+    private String image;
 
-    public TopicInfo(String category, String categoryHref, String title, String href, String num) {
+    public TopicInfo(String category, String categoryHref, String title, String href, String num, String image) {
         this.category = category;
         this.categoryHref = categoryHref;
         this.title = title;
         this.href = href;
         this.num = num;
+        this.image = image;
     }
 
     public String getCategory() {
@@ -38,6 +40,10 @@ public class TopicInfo implements Serializable {
 
     public String getNum() {
         return num;
+    }
+
+    public String getImage()  {
+        return image;
     }
 
 }

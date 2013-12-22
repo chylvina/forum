@@ -15,14 +15,12 @@ var getTop10 = function() {
         $(elem).find('a').each(function (index, elem) {
             var elem = $(elem);
             if(index == 0) {
-                topic.c = {};
-                topic.c.href = elem.prop('href');
-                topic.c.title = elem.prop('title');
+                topic.href = elem.prop('href');
+                topic.title = elem.prop('title');
             }
             else if(index == 1) {
-                topic.t = {};
-                topic.t.href = elem.prop('href');
-                topic.t.title = elem.prop('title');
+                topic.categoryHref = elem.prop('href');
+                topic.category = elem.prop('title');
             }
 
         });
@@ -53,14 +51,12 @@ var getHotSpot = function() {
         $(elem).find('a').each(function (index, elem) {
             var elem = $(elem);
             if(index == 0) {
-                topic.c = {};
-                topic.c.href = elem.prop('href');
-                topic.c.title = elem.prop('title');
+                topic.href = elem.prop('href');
+                topic.title = elem.prop('title');
             }
             else if(index == 1) {
-                topic.t = {};
-                topic.t.href = elem.prop('href');
-                topic.t.title = elem.prop('title');
+                topic.categoryHref = elem.prop('href');
+                topic.category = elem.prop('title');
             }
 
         });

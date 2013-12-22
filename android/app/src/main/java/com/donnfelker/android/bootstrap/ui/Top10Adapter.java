@@ -4,18 +4,19 @@ import android.view.LayoutInflater;
 
 import com.donnfelker.android.bootstrap.R;
 import com.donnfelker.android.bootstrap.core.News;
+import com.donnfelker.android.bootstrap.core.TopicInfo;
 import com.donnfelker.android.bootstrap.ui.AlternatingColorListAdapter;
 
 import java.util.List;
 
-public class NewsListAdapter extends AlternatingColorListAdapter<News> {
+public class Top10Adapter extends AlternatingColorListAdapter<TopicInfo> {
     /**
      * @param inflater
      * @param items
      * @param selectable
      */
-    public NewsListAdapter(LayoutInflater inflater, List<News> items,
-                               boolean selectable) {
+    public Top10Adapter(LayoutInflater inflater, List<TopicInfo> items,
+                           boolean selectable) {
         super(R.layout.news_list_item, inflater, items, selectable);
     }
 
@@ -23,7 +24,7 @@ public class NewsListAdapter extends AlternatingColorListAdapter<News> {
      * @param inflater
      * @param items
      */
-    public NewsListAdapter(LayoutInflater inflater, List<News> items) {
+    public Top10Adapter(LayoutInflater inflater, List<TopicInfo> items) {
         super(R.layout.news_list_item, inflater, items);
     }
 
@@ -33,11 +34,11 @@ public class NewsListAdapter extends AlternatingColorListAdapter<News> {
     }
 
     @Override
-    protected void update(int position, News item) {
+    protected void update(int position, TopicInfo item) {
         super.update(position, item);
 
-        setText(0, item.getTitle());
-        setText(1, item.getContent());
+        setText(0, item.getCategory());
+        setText(1, item.getTitle());
         //setNumber(R.id.tv_date, item.getCreatedAt());
     }
 }

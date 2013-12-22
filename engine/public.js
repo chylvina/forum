@@ -17,16 +17,46 @@ server.use(restify.bodyParser());
 
 var newsmthParse = require('./modules/newsmth-parse');
 
-server.get('/api/newsmth/index', function (req, res, next) {
+server.get('/api/newsmth/top10', function (req, res, next) {
     return res.json({
-        success: 1,
-        data: {
-            top10: [
-                {
-
-                }
-            ]
-        }
+        success: true,
+        data: [
+            {
+                category: "category1",
+                categoryHref: "categoryHref1",
+                title: "title1",
+                href: "href1",
+                num: "num1"
+            },
+            {
+                category: "category2",
+                categoryHref: "categoryHref2",
+                title: "title2",
+                href: "href2",
+                num: "num2"
+            },
+            {
+                category: "category3",
+                categoryHref: "categoryHref3",
+                title: "title3",
+                href: "href3",
+                num: "num3"
+            },
+            {
+                category: "category4",
+                categoryHref: "categoryHref4",
+                title: "title4",
+                href: "href4",
+                num: "num4"
+            },
+            {
+                category: "category5",
+                categoryHref: "categoryHref5",
+                title: "title5",
+                href: "href5",
+                num: "num5"
+            }
+        ]
     });
 });
 

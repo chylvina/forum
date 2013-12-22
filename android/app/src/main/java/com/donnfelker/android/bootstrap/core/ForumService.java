@@ -85,23 +85,6 @@ public class ForumService {
         }
     }
 
-
-    private final String apiKey;
-    private final String username;
-    private final String password;
-
-    /**
-     * Create bootstrap service
-     *
-     * @param username
-     * @param password
-     */
-    public ForumService(final String username, final String password) {
-        this.username = username;
-        this.password = password;
-        this.apiKey = null;
-    }
-
     /**
      * Create bootstrap service
      *
@@ -184,7 +167,7 @@ public class ForumService {
      * @throws IOException
      */
     public List<User> getUsers() throws IOException {
-        try {
+        /*try {
             HttpRequest request = execute(HttpRequest.get(URL_USERS));
             UsersWrapper response = fromJson(request, UsersWrapper.class);
             if (response != null && response.results != null)
@@ -192,7 +175,8 @@ public class ForumService {
             return Collections.emptyList();
         } catch (HttpRequestException e) {
             throw e.getCause();
-        }
+        }*/
+        return Collections.emptyList();
     }
 
     /**
@@ -202,7 +186,7 @@ public class ForumService {
      * @throws IOException
      */
     public List<News> getNews() throws IOException {
-        try {
+        /*try {
             HttpRequest request = execute(HttpRequest.get(URL_NEWS));
             NewsWrapper response = fromJson(request, NewsWrapper.class);
             if (response != null && response.results != null)
@@ -210,7 +194,8 @@ public class ForumService {
             return Collections.emptyList();
         } catch (HttpRequestException e) {
             throw e.getCause();
-        }
+        }*/
+        return Collections.emptyList();
     }
 
     /**
@@ -220,7 +205,7 @@ public class ForumService {
      * @throws IOException
      */
     public List<CheckIn> getCheckIns() throws IOException {
-        try {
+        /*try {
             HttpRequest request = execute(HttpRequest.get(URL_CHECKINS));
             CheckInWrapper response = fromJson(request, CheckInWrapper.class);
             if (response != null && response.results != null)
@@ -228,7 +213,8 @@ public class ForumService {
             return Collections.emptyList();
         } catch (HttpRequestException e) {
             throw e.getCause();
-        }
+        }*/
+        return Collections.emptyList();
     }
 
     public List<TopicInfo> getTop10() throws IOException {

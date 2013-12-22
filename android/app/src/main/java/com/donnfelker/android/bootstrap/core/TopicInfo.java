@@ -1,14 +1,18 @@
 package com.donnfelker.android.bootstrap.core;
 
-public class TopicInfo {
+import java.io.Serializable;
+
+public class TopicInfo implements Serializable {
+
+    private static final long serialVersionUID = -6641292855569752036L;
 
     private String category;
     private String categoryHref;
     private String title;
     private String href;
-    private Short num;
+    private String num;
 
-    public TopicInfo(String category, String categoryHref, String title, String href, Short num) {
+    public TopicInfo(String category, String categoryHref, String title, String href, String num) {
         this.category = category;
         this.categoryHref = categoryHref;
         this.title = title;
@@ -32,12 +36,8 @@ public class TopicInfo {
         return href;
     }
 
-    public Short getNum() {
+    public String getNum() {
         return num;
     }
-
-    private Location location;
-    private String name;
-    private String objectId;
 
 }

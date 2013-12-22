@@ -53,8 +53,9 @@ public class CarouselActivity extends BootstrapFragmentActivity {
 
         Views.inject(this);
 
-        checkAuth();
-
+        //checkAuth();
+        userHasAuthenticated = true;
+        initScreen();
     }
 
     private void initScreen() {

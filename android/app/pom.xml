@@ -6,7 +6,7 @@
 
     <artifactId>android-bootstrap</artifactId>
     <packaging>apk</packaging>
-    <name>Android Bootstrap app</name>
+    <name>Android App</name>
     <url>https://github.com/donnfelker/android-bootstrap</url>
 
     <parent>

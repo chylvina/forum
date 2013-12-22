@@ -60,6 +60,8 @@ public class Constants {
          */
         public static final String URL_NEWS = URL_BASE + "/1/classes/News";
 
+        public static final String URL_TOP10 = "http://192.168.1.100:8080/api/newsmth/top10";
+
         /**
          * List Checkin's URL
          */
@@ -82,6 +84,8 @@ public class Constants {
         private Extra() {}
 
         public static final String NEWS_ITEM = "news_item";
+
+        public static final String TOPIC_INFO = "topic_info";
 
         public static final String USER = "user";
 

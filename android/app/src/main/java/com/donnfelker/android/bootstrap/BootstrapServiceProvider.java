@@ -19,6 +19,8 @@ public class BootstrapServiceProvider {
     @Inject ApiKeyProvider keyProvider;
     @Inject UserAgentProvider userAgentProvider;
 
+    private BootstrapService bootstrapService;
+
     /**
      * Get service for configured key provider
      * <p>
@@ -29,6 +31,10 @@ public class BootstrapServiceProvider {
      * @throws AccountsException
      */
     public BootstrapService getService(Activity activity) throws IOException, AccountsException {
-        return new BootstrapService(keyProvider.getAuthKey(activity), userAgentProvider);
+        if(bootstrapService == null) {
+            bootstrapService = new BootstrapService(userAgentProvider);
+        }
+        return bootstrapService;
+        //return new BootstrapService(keyProvider.getAuthKey(activity), userAgentProvider);
     }
 }

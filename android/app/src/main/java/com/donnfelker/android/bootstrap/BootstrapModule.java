@@ -7,14 +7,7 @@ import com.donnfelker.android.bootstrap.authenticator.BootstrapAuthenticatorActi
 import com.donnfelker.android.bootstrap.authenticator.LogoutService;
 import com.donnfelker.android.bootstrap.core.CheckIn;
 import com.donnfelker.android.bootstrap.core.TimerService;
-import com.donnfelker.android.bootstrap.ui.BootstrapTimerActivity;
-import com.donnfelker.android.bootstrap.ui.CarouselActivity;
-import com.donnfelker.android.bootstrap.ui.CheckInsListFragment;
-import com.donnfelker.android.bootstrap.ui.ItemListFragment;
-import com.donnfelker.android.bootstrap.ui.NewsActivity;
-import com.donnfelker.android.bootstrap.ui.NewsListFragment;
-import com.donnfelker.android.bootstrap.ui.UserActivity;
-import com.donnfelker.android.bootstrap.ui.UserListFragment;
+import com.donnfelker.android.bootstrap.ui.*;
 import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
@@ -38,6 +31,8 @@ import dagger.Provides;
                 CheckInsListFragment.class,
                 NewsActivity.class,
                 NewsListFragment.class,
+                Top10Fragment.class,
+                TopicActivity.class,
                 UserActivity.class,
                 UserListFragment.class,
                 TimerService.class

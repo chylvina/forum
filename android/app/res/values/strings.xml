@@ -2,7 +2,7 @@
 
 <resources>
 
-    <string name="app_name">Android Bootstrap</string>
+    <string name="app_name">Android App</string>
     <string name="content_column">Content</string>
     <string name="page_referrers">Referrers</string>
     <string name="refresh_action">Refresh</string>
@@ -17,8 +17,10 @@
     <string name="error_loading_users">Loading users failed</string>
     <string name="error_loading_news">Loading news failed</string>
     <string name="error_loading_checkins">Loading check-ins failed</string>
+    <string name="error_loading">加载数据失败</string>
     <string name="no_users">No Users</string>
     <string name="no_news">No News</string>
+    <string name="no_top10">暂无数据</string>
     <string name="avatar">Avatar</string>
     <string name="choose">Choose</string>
 

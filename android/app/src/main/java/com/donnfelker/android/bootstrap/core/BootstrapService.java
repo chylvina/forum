@@ -1,14 +1,6 @@
 
 package com.donnfelker.android.bootstrap.core;
 
-import static com.donnfelker.android.bootstrap.core.Constants.Http.HEADER_PARSE_APP_ID;
-import static com.donnfelker.android.bootstrap.core.Constants.Http.HEADER_PARSE_REST_API_KEY;
-import static com.donnfelker.android.bootstrap.core.Constants.Http.PARSE_APP_ID;
-import static com.donnfelker.android.bootstrap.core.Constants.Http.PARSE_REST_API_KEY;
-import static com.donnfelker.android.bootstrap.core.Constants.Http.URL_CHECKINS;
-import static com.donnfelker.android.bootstrap.core.Constants.Http.URL_NEWS;
-import static com.donnfelker.android.bootstrap.core.Constants.Http.URL_USERS;
-
 import com.github.kevinsawicki.http.HttpRequest;
 import com.github.kevinsawicki.http.HttpRequest.HttpRequestException;
 import com.google.gson.Gson;
@@ -19,6 +11,8 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.Collections;
 import java.util.List;
+
+import static com.donnfelker.android.bootstrap.core.Constants.Http.*;
 
 /**
  * Bootstrap API service
@@ -58,6 +52,13 @@ public class BootstrapService {
         private List<News> results;
     }
 
+    private static class Topic10Wrapper {
+
+        private Boolean success;
+
+        private List<TopicInfo> data;
+    }
+
     private static class CheckInWrapper {
 
         private List<CheckIn> results;
@@ -79,11 +80,6 @@ public class BootstrapService {
         }
     }
 
-
-    private final String apiKey;
-    private final String username;
-    private final String password;
-
     /**
      * Create bootstrap service
      *
@@ -91,9 +87,7 @@ public class BootstrapService {
      * @param password
      */
     public BootstrapService(final String username, final String password) {
-        this.username = username;
-        this.password = password;
-        this.apiKey = null;
+
     }
 
     /**
@@ -104,9 +98,17 @@ public class BootstrapService {
      */
     public BootstrapService(final String apiKey, final UserAgentProvider userAgentProvider) {
         this.userAgentProvider = userAgentProvider;
-        this.username = null;
-        this.password = null;
-        this.apiKey = apiKey;
+
+    }
+
+    /**
+     * Create bootstrap service
+     *
+     * @param userAgentProvider
+     *
+     */
+    public BootstrapService(final UserAgentProvider userAgentProvider) {
+        this.userAgentProvider = userAgentProvider;
     }
 
     /**
@@ -182,7 +184,7 @@ public class BootstrapService {
      * @throws IOException
      */
     public List<User> getUsers() throws IOException {
-        try {
+        /*try {
             HttpRequest request = execute(HttpRequest.get(URL_USERS));
             UsersWrapper response = fromJson(request, UsersWrapper.class);
             if (response != null && response.results != null)
@@ -190,7 +192,8 @@ public class BootstrapService {
             return Collections.emptyList();
         } catch (HttpRequestException e) {
             throw e.getCause();
-        }
+        }*/
+        return Collections.emptyList();
     }
 
     /**
@@ -211,6 +214,18 @@ public class BootstrapService {
         }
     }
 
+    public List<TopicInfo> getTop10() throws IOException {
+        try {
+            HttpRequest request = execute(HttpRequest.get(URL_TOP10));
+            Topic10Wrapper response = fromJson(request, Topic10Wrapper.class);
+            if (response != null && response.success == true && response.data != null)
+                return response.data;
+            return Collections.emptyList();
+        } catch (HttpRequestException e) {
+            throw e.getCause();
+        }
+    }
+
     /**
      * Get all bootstrap Checkins that exists on Parse.com
      *
@@ -218,7 +233,7 @@ public class BootstrapService {
      * @throws IOException
      */
     public List<CheckIn> getCheckIns() throws IOException {
-        try {
+        /*try {
             HttpRequest request = execute(HttpRequest.get(URL_CHECKINS));
             CheckInWrapper response = fromJson(request, CheckInWrapper.class);
             if (response != null && response.results != null)
@@ -226,7 +241,8 @@ public class BootstrapService {
             return Collections.emptyList();
         } catch (HttpRequestException e) {
             throw e.getCause();
-        }
+        }*/
+        return Collections.emptyList();
     }
 
 }

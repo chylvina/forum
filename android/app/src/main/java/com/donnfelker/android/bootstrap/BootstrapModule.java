@@ -32,6 +32,7 @@ import dagger.Provides;
                 NewsActivity.class,
                 NewsListFragment.class,
                 Top10Fragment.class,
+                HotSpotFragment.class,
                 TopicActivity.class,
                 UserActivity.class,
                 UserListFragment.class,

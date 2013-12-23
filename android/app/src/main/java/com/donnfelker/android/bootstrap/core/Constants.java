@@ -66,6 +66,8 @@ public class Constants {
 
         public static final String URL_RECOMMEND = HOST + "/api/newsmth/recommend";
 
+        public static final String URL_HOTSPOT = HOST + "/api/newsmth/hotspot";
+
         /**
          * List Checkin's URL
          */

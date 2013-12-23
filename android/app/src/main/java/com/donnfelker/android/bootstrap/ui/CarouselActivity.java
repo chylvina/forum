@@ -64,7 +64,7 @@ public class CarouselActivity extends BootstrapFragmentActivity {
             pager.setAdapter(new BootstrapPagerAdapter(getResources(), getSupportFragmentManager()));
 
             indicator.setViewPager(pager);
-            pager.setCurrentItem(1);
+            pager.setCurrentItem(0);
 
         }
 

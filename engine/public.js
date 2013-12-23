@@ -104,23 +104,23 @@ server.get('/api/newsmth/top10', function (req, res, next) {
     );
 });
 
-server.get('/api/newsmth/recommend', function (req, res, next) {
+server.get('/api/newsmth/hotspot', function (req, res, next) {
     _qGetDataFromRedis('test')
         .then(
         function (data) {
             return res.json({
                 success: true,
-                data: data.slider
+                data: data.hotspot
             });
         },
         function (err) {
             _qParseIndex()
                 .then(
                 function (data) {
-                    console.log(JSON.parse(data).slider);
+                    console.log(JSON.parse(data).hotspot);
                     return res.json({
                         success: true,
-                        data: JSON.parse(data).slider
+                        data: JSON.parse(data).hotspot
                     });
                 },
                 function (err) {

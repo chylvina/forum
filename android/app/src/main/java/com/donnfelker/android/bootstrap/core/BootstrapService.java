@@ -238,6 +238,18 @@ public class BootstrapService {
         }
     }
 
+    public List<TopicInfo> getHotSpot() throws IOException {
+        try {
+            HttpRequest request = execute(HttpRequest.get(URL_HOTSPOT));
+            TopicListWrapper response = fromJson(request, TopicListWrapper.class);
+            if (response != null && response.success == true && response.data != null)
+                return response.data;
+            return Collections.emptyList();
+        } catch (HttpRequestException e) {
+            throw e.getCause();
+        }
+    }
+
     /**
      * Get all bootstrap Checkins that exists on Parse.com
      *

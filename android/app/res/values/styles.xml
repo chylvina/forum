@@ -97,10 +97,6 @@
 
 
 
-
-
-
-
     <style name="StyledIndicators" parent="Theme.Bootstrap.Dark">
         <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>
     </style>

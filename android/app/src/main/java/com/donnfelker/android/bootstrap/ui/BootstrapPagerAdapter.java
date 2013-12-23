@@ -42,9 +42,9 @@ public class BootstrapPagerAdapter extends FragmentPagerAdapter {
             f1.setArguments(bundle);
             return f1;
         case 1:
-            UserListFragment userListFragment = new UserListFragment();
-            userListFragment.setArguments(bundle);
-            return userListFragment;
+            HotSpotFragment hotSpotAdapter = new HotSpotFragment();
+            hotSpotAdapter.setArguments(bundle);
+            return hotSpotAdapter;
         case 2:
             CheckInsListFragment checkInsFragment = new CheckInsListFragment();
             checkInsFragment.setArguments(bundle);
@@ -58,11 +58,14 @@ public class BootstrapPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
         case 0:
-            return resources.getString(R.string.page_news);
+            return "十大";
+            //return resources.getString(R.string.page_news);
         case 1:
-            return resources.getString(R.string.page_users);
+            return "近期热帖";
+            //return resources.getString(R.string.page_users);
         case 2:
-            return resources.getString(R.string.page_checkins);
+            return "汽车世界";
+            //return resources.getString(R.string.page_checkins);
         default:
             return null;
         }

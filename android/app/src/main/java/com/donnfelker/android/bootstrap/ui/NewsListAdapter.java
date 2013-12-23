@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 
 import com.donnfelker.android.bootstrap.R;
 import com.donnfelker.android.bootstrap.core.News;
-import com.donnfelker.android.bootstrap.ui.AlternatingColorListAdapter;
 
 import java.util.List;
 
@@ -16,7 +15,7 @@ public class NewsListAdapter extends AlternatingColorListAdapter<News> {
      */
     public NewsListAdapter(LayoutInflater inflater, List<News> items,
                                boolean selectable) {
-        super(R.layout.news_list_item, inflater, items, selectable);
+        super(R.layout.topic_list_item, inflater, items, selectable);
     }
 
     /**
@@ -24,7 +23,7 @@ public class NewsListAdapter extends AlternatingColorListAdapter<News> {
      * @param items
      */
     public NewsListAdapter(LayoutInflater inflater, List<News> items) {
-        super(R.layout.news_list_item, inflater, items);
+        super(R.layout.topic_list_item, inflater, items);
     }
 
     @Override

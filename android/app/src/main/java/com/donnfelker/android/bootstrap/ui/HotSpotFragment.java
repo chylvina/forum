@@ -16,7 +16,6 @@ import com.donnfelker.android.bootstrap.BootstrapServiceProvider;
 import com.donnfelker.android.bootstrap.Injector;
 import com.donnfelker.android.bootstrap.R;
 import com.donnfelker.android.bootstrap.authenticator.LogoutService;
-import com.donnfelker.android.bootstrap.core.News;
 import com.donnfelker.android.bootstrap.core.TopicInfo;
 import com.github.kevinsawicki.wishlist.SingleTypeAdapter;
 import javax.inject.Inject;
@@ -24,7 +23,7 @@ import javax.inject.Inject;
 import java.util.Collections;
 import java.util.List;
 
-public class Top10Fragment extends ItemListFragment<TopicInfo> {
+public class HotSpotFragment extends ItemListFragment<TopicInfo> {
 
     @Inject protected BootstrapServiceProvider serviceProvider;
     @Inject protected LogoutService logoutService;
@@ -76,7 +75,7 @@ public class Top10Fragment extends ItemListFragment<TopicInfo> {
             public List<TopicInfo> loadData() throws Exception {
                 try {
                     if(getActivity() != null) {
-                        return serviceProvider.getService(getActivity()).getTop10();
+                        return serviceProvider.getService(getActivity()).getHotSpot();
                     } else {
                         return Collections.emptyList();
                     }

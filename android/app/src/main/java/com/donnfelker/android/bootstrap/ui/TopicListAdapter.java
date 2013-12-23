@@ -7,14 +7,14 @@ import com.donnfelker.android.bootstrap.core.TopicInfo;
 
 import java.util.List;
 
-public class Top10Adapter extends AlternatingColorListAdapter<TopicInfo> {
+public class TopicListAdapter extends AlternatingColorListAdapter<TopicInfo> {
     /**
      * @param inflater
      * @param items
      * @param selectable
      */
-    public Top10Adapter(LayoutInflater inflater, List<TopicInfo> items,
-                           boolean selectable) {
+    public TopicListAdapter(LayoutInflater inflater, List<TopicInfo> items,
+                        boolean selectable) {
         super(R.layout.topic_list_item, inflater, items, selectable);
     }
 
@@ -22,7 +22,7 @@ public class Top10Adapter extends AlternatingColorListAdapter<TopicInfo> {
      * @param inflater
      * @param items
      */
-    public Top10Adapter(LayoutInflater inflater, List<TopicInfo> items) {
+    public TopicListAdapter(LayoutInflater inflater, List<TopicInfo> items) {
         super(R.layout.topic_list_item, inflater, items);
     }
 

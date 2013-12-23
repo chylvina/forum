@@ -39,7 +39,7 @@ var run = function (urlStr, request, response) {
   console.log('Opening: ' + url);
   page.open(url, function (status) {
     if (status !== 'success') {
-      console.error('Load url error: ' + url);
+      console.log('Load url error: ' + url);
       phantom.exit();
       return;
     }
@@ -54,7 +54,7 @@ var run = function (urlStr, request, response) {
       phantom.exit();
     }
     else {
-      console.error('Failed to inject inject.js');
+      console.log('Failed to inject inject.js');
       page.release();
       phantom.exit();
     }

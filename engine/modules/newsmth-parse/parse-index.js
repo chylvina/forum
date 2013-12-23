@@ -9,7 +9,7 @@ var newsmth_parse = function() {
 };
 
 var url2Mobile = function(s) {
-    return s.replace("http://www.newsmth.net/nForum/article/", "http://m.newsmth.net/article/");
+    return s.replace("http://www.newsmth.net/nForum/", "http://m.newsmth.net/");
 }
 
 var getTop10 = function() {
@@ -19,7 +19,7 @@ var getTop10 = function() {
         $(elem).find('a').each(function (index, elem) {
             var elem = $(elem);
             if(index == 0) {
-                topic.categoryHref = elem.prop('href');
+                topic.categoryHref = url2Mobile(elem.prop('href'));
                 topic.category = elem.prop('title');
             }
             else if(index == 1) {
@@ -56,7 +56,7 @@ var getHotSpot = function() {
         $(elem).find('a').each(function (index, elem) {
             var elem = $(elem);
             if(index == 0) {
-                topic.categoryHref = elem.prop('href');
+                topic.categoryHref = url2Mobile(elem.prop('href'));
                 topic.category = elem.prop('title');
             }
             else if(index == 1) {

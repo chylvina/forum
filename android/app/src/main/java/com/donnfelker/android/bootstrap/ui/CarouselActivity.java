@@ -14,6 +14,7 @@ import com.donnfelker.android.bootstrap.BootstrapServiceProvider;
 import com.donnfelker.android.bootstrap.R;
 import com.donnfelker.android.bootstrap.core.BootstrapService;
 import com.donnfelker.android.bootstrap.util.SafeAsyncTask;
+import com.viewpagerindicator.TabPageIndicator;
 import com.viewpagerindicator.TitlePageIndicator;
 
 import javax.inject.Inject;
@@ -28,7 +29,7 @@ import net.simonvt.menudrawer.MenuDrawer;
  */
 public class CarouselActivity extends BootstrapFragmentActivity {
 
-    @InjectView(R.id.tpi_header) TitlePageIndicator indicator;
+    @InjectView(R.id.tpi_header) TabPageIndicator indicator;
     @InjectView(R.id.vp_pages) ViewPager pager;
 
     @Inject BootstrapServiceProvider serviceProvider;

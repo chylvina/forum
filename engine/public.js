@@ -72,6 +72,12 @@ var _qGetDataFromRedis = function (key) {
     return deferred.promise;
 }
 
+var parseIndexTask = function() {
+    _qParseIndex();
+
+    setTimeout(parseIndexTask, 60000);
+};
+
 server.get('/api/newsmth/top10', function (req, res, next) {
     _qGetDataFromRedis('test')
         .then(
@@ -149,4 +155,6 @@ server.get('/api/newsmth/index', function (req, res, next) {
 
 server.listen(8080, function () {
     console.log('%s listening at %s', server.name, server.url);
+
+    parseIndexTask();
 });

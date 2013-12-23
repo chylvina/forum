@@ -60,9 +60,11 @@ public class Constants {
          */
         public static final String URL_NEWS = URL_BASE + "/1/classes/News";
 
-        public static final String URL_TOP10 = "http://192.168.1.100:8080/api/newsmth/top10";
+        public static final String HOST = "http://10.32.178.32:8080";
 
-        public static final String URL_RECOMMEND = "http://192.168.1.100:8080/api/newsmth/recommend";
+        public static final String URL_TOP10 = HOST + "/api/newsmth/top10";
+
+        public static final String URL_RECOMMEND = HOST + "/api/newsmth/recommend";
 
         /**
          * List Checkin's URL

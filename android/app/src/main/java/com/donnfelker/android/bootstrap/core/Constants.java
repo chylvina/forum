@@ -60,7 +60,7 @@ public class Constants {
          */
         public static final String URL_NEWS = URL_BASE + "/1/classes/News";
 
-        public static final String HOST = "http://10.32.178.32:8080";
+        public static final String HOST = "http://10.32.179.211:8080";
 
         public static final String URL_TOP10 = HOST + "/api/newsmth/top10";
 

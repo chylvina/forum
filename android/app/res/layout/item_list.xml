@@ -31,18 +31,36 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:context=".MainActivity" >
+                tools:context="com.donnfelker.android.bootstrap.ui.ItemListFragment" >
 
-    <com.example.pulltorefreshtest.RefreshableView
+    <com.donnfelker.android.bootstrap.ui.view.RefreshableView
             android:id="@+id/refreshable_view"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" >
-
+        <ListView
+                android:id="@android:id/list"
+                style="@style/ListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
         <ListView
                 android:id="@+id/list_view"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent" >
+                android:layout_height="fill_parent">
         </ListView>
-    </com.example.pulltorefreshtest.RefreshableView>
+    </com.donnfelker.android.bootstrap.ui.view.RefreshableView>
+
+    <TextView
+            android:id="@android:id/empty"
+            style="@style/ListSubtitleText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone" />
+
+    <ProgressBar
+            android:id="@+id/pb_loading"
+            style="@style/ListSpinner"
+            android:layout_centerInParent="true" />
 
 </RelativeLayout>

@@ -24,9 +24,12 @@ import com.donnfelker.android.bootstrap.R;
 import com.donnfelker.android.bootstrap.R.id;
 import com.donnfelker.android.bootstrap.R.layout;
 import com.donnfelker.android.bootstrap.authenticator.LogoutService;
+import com.donnfelker.android.bootstrap.ui.view.RefreshableView;
+import com.donnfelker.android.bootstrap.ui.view.RefreshableView.PullToRefreshListener;
 import com.github.kevinsawicki.wishlist.SingleTypeAdapter;
 import com.github.kevinsawicki.wishlist.Toaster;
 import com.github.kevinsawicki.wishlist.ViewUtils;
+
 
 import java.util.Collections;
 import java.util.List;
@@ -68,6 +71,8 @@ public abstract class ItemListFragment<E> extends SherlockFragment
      * Empty view
      */
     protected TextView emptyView;
+
+    protected RefreshableView refreshableView;
 
     /**
      * Progress bar
@@ -112,6 +117,19 @@ public abstract class ItemListFragment<E> extends SherlockFragment
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        refreshableView = (RefreshableView) view.findViewById(R.id.refreshable_view);
+        // todo: remove listener
+        refreshableView.setOnRefreshListener(new PullToRefreshListener() {
+            @Override
+            public void onRefresh() {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                refreshableView.finishRefreshing();
+            }
+        }, 0);
         listView = (ListView) view.findViewById(android.R.id.list);
         listView.setOnItemClickListener(new OnItemClickListener() {
 

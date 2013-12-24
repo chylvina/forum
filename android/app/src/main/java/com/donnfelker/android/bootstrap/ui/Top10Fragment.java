@@ -47,7 +47,7 @@ public class Top10Fragment extends ItemListFragment<TopicInfo> {
     protected void configureList(Activity activity, ListView listView) {
         super.configureList(activity, listView);
 
-        listView.setFastScrollEnabled(true);
+        listView.setFastScrollEnabled(false);
         listView.setDividerHeight(0);
 
         /*getListAdapter()

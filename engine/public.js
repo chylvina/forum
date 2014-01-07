@@ -78,6 +78,31 @@ var parseIndexTask = function() {
     setTimeout(parseIndexTask, 60000);
 };
 
+server.get('/api/test1', function (req, res, next) {
+  res.json({
+    success: true,
+    data: 'test'
+  });
+});
+
+server.get('/api/test2', function (req, res, next) {
+  _qGetDataFromRedis('test')
+    .then(
+    function (data) {
+      return res.json({
+        success: true,
+        data: data.top10
+      });
+    },
+    function (err) {
+      return res.json({
+        success: false,
+        data: 'redis data not available'
+      });
+    }
+  );
+});
+
 server.get('/api/newsmth/top10', function (req, res, next) {
     _qGetDataFromRedis('test')
         .then(

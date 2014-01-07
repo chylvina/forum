@@ -24,10 +24,18 @@ var getTop10 = function() {
             }
             else if(index == 1) {
                 topic.href = url2Mobile(elem.prop('href'));
-                topic.title = elem.prop('title');
+                topic.title = elem.text();
             }
 
         });
+
+        try {
+            var contents = $(elem).find('div').contents();
+            topic.replyNum = contents[contents.length - 1].nodeValue.replace(/\((\d+)\)/, '$1');
+        }
+        catch(e) {
+            topic.replyNum = 0;
+        }
         result.push(topic);
     });
 
